@@ -8,15 +8,17 @@
     <title>Hello Angularjs</title>
 </head>
 <body>
-    <div ng-app="" ng-init>
+    <div ng-app="" ng-init="x=100; y=2;">
         Welcome to AngularJS Training
         <br>What is your name?
         <input type="text" name="" id="" ng-model="username">
-        <br>1)<br> Hello {{username}}! How are you?
+        <br>1) Hello {{username}}! How are you?
         <br>2) <p ng-bind="username"></p> username is binding inside the tag(element)
         <br>3) <p {{username}}></p> using expression in tag does not work.
         <br>4) <p class="{{username}}">Type blue</p> 
         <input type="text" name="" id="" ng-model="username">
+        {{x + "/" + y+"="+x/y}}
+        <br><input type="text" name="" id="" ng-model="x">
     </div>
     <style>
         .blue{
