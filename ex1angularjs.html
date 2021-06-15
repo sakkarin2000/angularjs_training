@@ -8,12 +8,21 @@
     <title>Hello Angularjs</title>
 </head>
 <body>
-    <div ng-app="">
+    <div ng-app="" ng-init>
         Welcome to AngularJS Training
         <br>What is your name?
-        <input type="text" name="" id="" ng-model="usernmame">
-        <br> Hello {{usernmame}}! How are you?
+        <input type="text" name="" id="" ng-model="username">
+        <br>1)<br> Hello {{username}}! How are you?
+        <br>2) <p ng-bind="username"></p> username is binding inside the tag(element)
+        <br>3) <p {{username}}></p> using expression in tag does not work.
+        <br>4) <p class="{{username}}">Type blue</p> 
+        <input type="text" name="" id="" ng-model="username">
     </div>
+    <style>
+        .blue{
+            color: blue;
+        }
+    </style>
     
 </body>
 </html>
