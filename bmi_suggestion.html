@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <title>BMI Body Mass Index</title>
+</head>
+<body>
+    <div ng-app="" ng-init="weight=1; height=1; bmiString = [{min:1,  max:18.5,   str:'below normal weight'},
+
+    {min:18.5,  max:25,   str:'normal weight'},
+
+    {min:25,  max:30,   str:'Over weight'},
+
+    {min:30,  max:100,   str:'Obesity'}  ];">
+        <h2>Welcome To Health Care Service</h2>
+        What is your name?
+        <input type="text" name="" id="" ng-model="uname">
+        <br><b ng-bind="uname"></b><span ng-if="uname"> is our value customer</span><br>
+        <h4>Please inform your information</h4>
+        Your weight in kilograms <input type="text" name="" id="" ng-model="weight">
+        <br>Your heigh in centimeters <input type="text" name="" id="" ng-model="height">
+        <p ng-if="weight==1 || height==1"> Waiting for Completed information</p>
+        <div ng-if="weight!=1 && height!=1" ><br>Your BMI is {{weight/((height/100)*(height/100))}}</div>
+        
+        <u ng-if="weight && height">
+            <span ng-repeat="x in bmiString">
+                <i ng-if=" (weight/((height/100)*(height/100))) >= x.min && (weight/((height/100)*(height/100))) < x.max">
+                {{x.str}}</i>
+            </span>
+
+        </u>
+    </div>
+</body>
+<style>
+    body {
+  font-family: "Prompt", sans-serif;
+}
+</style>
+</html>

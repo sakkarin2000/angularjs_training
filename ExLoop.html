@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <title>Repeat Example</title>
+</head>
+<body>
+    <div ng-app="" ng-init="students=['Janette','Opal','Atip','Golf','Ohm','Toei','Best','Mix','Ann','DJ'];
+    gpas=[3.44,3.11,2.06,4.00,3.93,3.76,3.78,3.8,3.2,3.7];">
+        <h3>Student Roster</h3>
+        <ol>
+            <li ng-repeat="x in students">
+                {{x}}: {{gpas[$index]}}
+            </li>
+        </ol>
+    </div>
+</body>
+<style>
+    body {
+  font-family: "Prompt", sans-serif;
+}
+</style>
+</html>
